@@ -32,6 +32,9 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 # use the new alias to set a flag (using --local makes it apply only to the .dotfiles repository in the $HOME directory)
 dotfiles config --local status.showUntrackedFiles no
 
+# track this remote repository
+dotfiles remote add origin https://github.com/Stefano-De-Ciechi/dotfiles.git
+
 # finally make your alias permanent by appending the command to your .bashrc, .zshrc or any other shell you are using
 echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'" >> $HOME/.bashrc
 echo "alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'" >> $HOME/.zshrc
