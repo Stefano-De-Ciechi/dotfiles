@@ -1,0 +1,93 @@
+/* ------------------------------------------------ */
+/* General / Waybar */
+/* ------------------------------------------------ */
+
+/*@import '~/.cache/wal/waybar-wal-colors.css';*/
+@import '../../.cache/wal/colors-waybar.css';
+
+/*@define-color waybar_background transparent;*/
+@define-color waybar_background @background;
+@define-color waybar_primary_text @foreground;
+@define-color waybar_workspace_active @color4;
+
+* {
+    font-family: "JetBrains Mono";
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: @waybar_background;
+    color: @waybar_primary_text;
+    transition-property: background-color;
+    transition-duration: .5s;
+    opacity: 0.8;
+}
+
+/* ------------------------------------------------ */
+/* Modules */
+/* ------------------------------------------------ */
+
+.modules-right {
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+/*.modules-center {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+}*/
+
+
+
+/* ------------------------------------------------ */
+/* Workspaces */
+/* ------------------------------------------------ */
+
+#workspaces button {
+    background-color: transparent;
+    color: @waybar_primary_text;
+}
+
+#workspaces button:hover {
+    background: none;
+    /*border: none;*/
+    border-color: transparent;
+    transition: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button.active {
+    /*background-color: rgba(100, 150, 200, 1);*/
+    color: @waybar_workspace_active; 
+}
+
+
+
+/* ------------------------------------------------ */
+/* Active Window  */
+/* ------------------------------------------------ */
+
+/* hyprland/window */
+#window {
+    margin-left: 20px;
+}
+
+/* ------------------------------------------------ */
+/* Tooltips */
+/* ------------------------------------------------ */
+
+/* tooltip isn't really that much customizable */
+tooltip {
+    background-color: @waybar_background;
+    opacity: 0.9;
+}
+
+/* tooltip label is a bit more customizable (and affect the tooltip in general, not only the text) */
+tooltip label {
+    color: @waybar_foreground;
+    border-color: @waybar_workspace_active;
+    border: 4px;
+    opacity: 0.9;
+}
+

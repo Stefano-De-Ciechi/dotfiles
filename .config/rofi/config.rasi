@@ -1,0 +1,27 @@
+// based on this: https://github.com/sayoohnara/bspwm-dots/tree/main
+
+/*@theme "/dev/null"*/
+
+/*@import "~/.cache/wal/rofi.rasi"*/
+
+configuration {
+		show-icons: true;
+		icon-theme: "Papirus-Dark";
+		terminal: "kitty";
+		location: 0;
+		font: "JetBrainsMono Nerd Font 12";	
+
+		display-drun: "Exec... > ";
+		//drun-display-format: "[[{name}]]"; 		// had to duplicate square-brackets to escape them
+		drun-display-format: "{icon} {name}";
+}
+
+@theme "~/.config/rofi/cyberpunk-theme.rasi"
+//@theme "~/.config/rofi/tokyo-night.rasi"
+
+
+/*inputbar {
+	background-image: url("~/.config/rofi/rofi.png", width);
+	padding: 180 0 0;
+	margin: 0 0 0 0;
+}*/

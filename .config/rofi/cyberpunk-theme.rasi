@@ -1,0 +1,81 @@
+@import "~/.cache/wal/rofi.rasi"
+
+* {
+	background-color: @BG;
+	ACCENT-COLOR: @COLOR3;
+	HIGHLIGH-COLOR: @COLOR4;
+}
+
+window { 
+		width: 35%;
+		transparency: "real";
+		orientation: vertical;
+		border-color: @ACCENT-COLOR;
+		border: 2px;
+}
+
+mainbox {
+		children: [inputbar, listview];
+}
+
+// ELEMENT
+// -----------------------------------
+
+element {
+		padding: 4 12;
+		text-color: @ACCENT-COLOR;
+}
+
+element selected {
+		//background-color: @HIGHLIGH-COLOR;
+}
+
+element-text selected {
+		text-color: @FG;
+}
+
+element-text {
+		//background-color: inherit;
+		text-color: @ACCENT-COLOR;
+}
+
+element-icon {
+		size: 16 px;
+		//background-color: inherit;
+		padding: 0 6 0 0;
+		alignment: vertical;
+}
+
+listview {
+		columns: 1;
+		lines: 6;
+		padding: 8 0;
+		fixed-height: true;
+		fixed-columns: true;
+		fixed-lines: true;
+		border: 0 10 6 10;
+}
+
+// INPUT BAR 
+//------------------------------------------------
+
+entry {
+		text-color: @FG;
+		padding: 10 10 0 0;
+		margin: 0 -2 0 0;
+}
+
+inputbar {
+		//background-image: url("~/.config/rofi/rofi.png", width);
+		padding: 0 0 10 0;
+		margin: 0 0 0 0;
+		border: 0 0 1 0;
+		border-color: @ACCENT-COLOR;
+}
+
+prompt {
+		text-color: @ACCENT-COLOR;
+		padding: 10 6 0 10;
+		margin: 0 -2 0 0;
+}
+

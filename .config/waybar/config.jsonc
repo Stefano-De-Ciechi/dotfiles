@@ -1,0 +1,118 @@
+{
+    "layer" : "top",
+    //"height" : 20,
+    "modules-left" : ["hyprland/window"],
+    "modules-center" : ["hyprland/workspaces"],
+    "modules-right": ["tray", "custom/random-background", "custom/todo", "network", "pulseaudio", "custom/gammastep", "backlight", "battery", "clock", "custom/exit"],
+    "spacing" : 5,
+
+
+
+    // ------------------------------------------
+    // Modules
+    // ------------------------------------------
+
+    "pulseaudio": {
+        "format": "[ {volume}% {icon} ]",
+        "format-bluetooth": "[ {volume}% {icon}  ]",
+        "format-muted": "[ {volume}% ]",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", ""]
+        },
+        "format-source" : "[ {volume}%  ]",
+        "format-source-muted" : "[ {volume}%   ]",
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"]
+    },
+
+    "backlight": {                          // screen brightness
+        "device": "intel_backlight",
+        "format": "[ {percent}% {icon} ]",
+        "format-icons": ["", ""],
+        "tooltip" : true
+    },
+
+    "battery" : {
+        "interval" : 5,                     // query the battery status every n seconds 
+        "format" : "[ {capacity}% {icon} ]",
+        "format-plugged" : "[  {capacity}% {icon} ]",
+        "format-charging" : "[  {capacity}% {icon} ]",
+        "format-icons" : ["", "", "", "", ""]
+    },
+
+    "clock" : {
+        "format-alt" : "[ {:%I:%M %p} ]",
+        "format" : "[ {:%a, %d. %b  %I:%M %p} ]"
+    },
+
+    "hyprland/workspaces" : {
+        "format" : "[ {name} ]",
+        "on-click" : "activate",
+        "on-scroll-up" : "hyprctl dispatch workspace r-1",
+        "on-scroll-down" : "hyprctl dispatch workspace r+1",
+        "sort-by-number" : true
+    },
+
+    "hyprland/window" : {
+        "format" : "[ {title} ]",
+        "icon" : true,
+        "icon-size" : 20,
+        "max-length" : 50
+    },
+
+    "custom/exit" : {
+        "format" : "[  ]",
+        "on-click" : "wlogout"
+    },
+
+    "network" : {
+        "interval" : 5,
+        //"interface": "wlan0",
+        //"format": "{ifname}",
+        "format-wifi" : "[   ]",
+        //"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-ethernet" : "[  ]",
+        "format-disconnected" : "[ no-conn ]", //An empty format will hide the module.
+        //"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi" : "{essid} ({signalStrength}%) ",
+        "tooltip-format-ethernet" : "{ifname} ",
+        "tooltip-format-disconnected" : "Disconnected",
+        "max-length" : 50,
+        "on-click" : "kitty -e nmtui"
+    },
+
+    "tray" : {                           // tray shows background processes like discord or anytype
+        "icon-size" : 15,
+        "spacing" : 10
+    },
+
+    "custom/gammastep" : {
+        "format" : "[ {} ]",
+        "interval" : 1,
+        "tooltip" : true,
+        "tooltip-format" : "screen temperature (gammastep -O [temp])",
+        "exec" : "echo $(cat /tmp/current_gammastep_temp)K",
+        "on-click" : "~/.config/waybar/scripts/gammastep_control.sh toggle",
+        "on-scroll-up" : "~/.config/waybar/scripts/gammastep_control.sh up",
+        "on-scroll-down" : "~/.config/waybar/scripts/gammastep_control.sh down"
+    },
+
+    "custom/todo" : {
+        "exec" : "~/.config/waybar/scripts/todo-list.sh",
+        "return-type" : "json",
+        "format" : "[ {} todos ]",
+        "on-click" : "kitty -e vim ~/Documents/todo.md",
+        "interval" : 5
+    },
+
+    "custom/random-background" : {
+        "format" : "[ bg ]",
+        "on-click" : "~/.config/hypr/scripts/random_background.sh",
+        "on-click-right" : "~/.config/hypr/scripts/random_background.sh anime",
+        "tooltip" : true,
+        "tooltip-format" : "change background and theme colors"
+    }
+
+}
