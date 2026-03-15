@@ -11,9 +11,9 @@ configuration {
 		location: 0;
 		font: "JetBrainsMono Nerd Font 12";	
 
-		display-drun: "Exec... > ";
-		//drun-display-format: "[[{name}]]"; 		// had to duplicate square-brackets to escape them
-		drun-display-format: "{icon} {name}";
+		display-drun: "EXEC > ";
+		drun-display-format: "{icon} [[ {name} ]]"; 		// had to duplicate square-brackets to escape them
+		//drun-display-format: "{icon} {name}";
 }
 
 @theme "~/.config/rofi/cyberpunk-theme.rasi"

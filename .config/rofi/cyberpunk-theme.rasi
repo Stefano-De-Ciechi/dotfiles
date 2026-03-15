@@ -1,4 +1,4 @@
-@import "~/.cache/wal/rofi.rasi"
+@import "~/.cache/wal/colors-rofi.rasi"
 
 * {
 	background-color: @BG;
@@ -7,11 +7,12 @@
 }
 
 window { 
-		width: 35%;
+		width: 30%;
 		transparency: "real";
 		orientation: vertical;
 		border-color: @ACCENT-COLOR;
-		border: 2px;
+		border: 3px;
+	  border-radius: 0px 0px 0px 0px;
 }
 
 mainbox {
@@ -27,6 +28,8 @@ element {
 }
 
 element selected {
+		border: 1px;
+		border-color: @ACCENT-COLOR;
 		//background-color: @HIGHLIGH-COLOR;
 }
 
@@ -42,18 +45,18 @@ element-text {
 element-icon {
 		size: 16 px;
 		//background-color: inherit;
-		padding: 0 6 0 0;
+		padding: 0 0 0 0;
 		alignment: vertical;
 }
 
 listview {
 		columns: 1;
 		lines: 6;
-		padding: 8 0;
+		//padding: 8 0;
 		fixed-height: true;
 		fixed-columns: true;
 		fixed-lines: true;
-		border: 0 10 6 10;
+		//border: 0 10 6 10;
 }
 
 // INPUT BAR 

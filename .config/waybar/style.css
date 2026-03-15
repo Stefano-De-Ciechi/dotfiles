@@ -7,7 +7,8 @@
 
 /*@define-color waybar_background transparent;*/
 @define-color waybar_background @background;
-@define-color waybar_primary_text @foreground;
+/*@define-color waybar_primary_text @foreground;*/
+@define-color waybar_primary_text @color4;
 @define-color waybar_workspace_active @color4;
 
 * {
