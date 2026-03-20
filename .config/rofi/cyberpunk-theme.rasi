@@ -16,34 +16,66 @@ window {
 }
 
 mainbox {
-		children: [inputbar, listview];
+	children: [inputbar, message, listview];
+}
+
+message {
+	textbox: "message";
+}
+
+// INPUT BAR 
+//------------------------------------------------
+
+entry {
+	cursor-width: 8px;
+	cursor-color: @ACCENT-COLOR;
+	text-color: @FG;
+	padding: 10 10 10 0;
+	margin: 0 -2 00 0;
+}
+
+inputbar {
+		//background-image: url("~/.config/rofi/rofi.png", width);
+		background-image: url("~/.cache/hyprlock_img", width);
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		//border: 0 0 1 0;
+		border-color: @ACCENT-COLOR;
+}
+
+prompt {
+		text-color: @ACCENT-COLOR;
+		padding: 10 6 0 10;
+		margin: 0 -2 0 0;
 }
 
 // ELEMENT
 // -----------------------------------
 
 element {
-		padding: 4 12;
-		text-color: @ACCENT-COLOR;
+	orientation: horizontal;
+	children: [ element-text, element-icon ];
+	padding: 4 12;
+	text-color: @ACCENT-COLOR;
 }
 
 element selected {
-		border: 1px;
-		border-color: @ACCENT-COLOR;
-		//background-color: @HIGHLIGH-COLOR;
+	border: 1px;
+	border-color: @ACCENT-COLOR;
+	//background-color: @HIGHLIGH-COLOR;
 }
 
 element-text selected {
-		text-color: @FG;
+	text-color: @FG;
 }
 
 element-text {
-		//background-color: inherit;
-		text-color: @ACCENT-COLOR;
+	//background-color: inherit;
+	text-color: @ACCENT-COLOR;
 }
 
 element-icon {
-		size: 16 px;
+		size: 1.2 em;
 		//background-color: inherit;
 		padding: 0 0 0 0;
 		alignment: vertical;
@@ -57,28 +89,5 @@ listview {
 		fixed-columns: true;
 		fixed-lines: true;
 		//border: 0 10 6 10;
-}
-
-// INPUT BAR 
-//------------------------------------------------
-
-entry {
-		text-color: @FG;
-		padding: 10 10 0 0;
-		margin: 0 -2 0 0;
-}
-
-inputbar {
-		//background-image: url("~/.config/rofi/rofi.png", width);
-		padding: 0 0 10 0;
-		margin: 0 0 0 0;
-		border: 0 0 1 0;
-		border-color: @ACCENT-COLOR;
-}
-
-prompt {
-		text-color: @ACCENT-COLOR;
-		padding: 10 6 0 10;
-		margin: 0 -2 0 0;
 }
 

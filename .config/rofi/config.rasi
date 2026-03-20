@@ -9,10 +9,11 @@ configuration {
 		icon-theme: "Papirus-Dark";
 		terminal: "kitty";
 		location: 0;
-		font: "JetBrainsMono Nerd Font 12";	
+		//font: "JetBrainsMono Nerd Font 12";	
+		font: "Space Mono Bold 12";
 
-		display-drun: "EXEC > ";
-		drun-display-format: "{icon} [[ {name} ]]"; 		// had to duplicate square-brackets to escape them
+		display-drun: "\////////// EXEC >";
+		//drun-display-format: "{icon} [[ {name} ]]"; 		// had to duplicate square-brackets to escape them
 		//drun-display-format: "{icon} {name}";
 }
 
