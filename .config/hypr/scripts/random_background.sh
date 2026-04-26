@@ -14,7 +14,7 @@ img=$(ls $wall_path | sort -R | tail -1)
 
 cp $wall_path$img ~/.cache/hyprlock_img   # directly copy the image in che .cache directory
 # swww img $wall_path$img --transition-type any --transition-fps 60 --transition-step 60
-swww img $wall_path$img --transition-type none    # changes background without animation
+awww img $wall_path$img --transition-type none    # changes background without animation
 wal -i $wall_path$img -n -q -e   # generates color schemes for kitty and others
 #sleep 0.2
 ~/.config/waybar/scripts/launch.sh    # restart waybar to refresh colors
